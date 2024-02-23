@@ -1,4 +1,4 @@
-package Day11.Ex07_Lang;
+package Day12.Ex03_Lang;
 
 public class StringEx {
 	
@@ -19,9 +19,12 @@ public class StringEx {
 		System.out.println( str1.substring(10) );			// index 앞의 문자열을 자르고, 뒤의 문자열을 반환
 		System.out.println( str1.substring(10,17) );		// index-(index2-1)까지 반환
 		
+		
 		System.out.println("=============================");
 		
-        //split("구분자"): (구분자)를 기준으로 문자열을 잘라서 배열로 반호나
+		
+		//split("구분자"): (구분자)를 기준으로 문자열을 잘라서 배열로 반환
+		
 		String[] sp = str1.split("");
 		for (int i = 0; i < sp.length; i++) {
 			System.out.println(i + " : \t " + sp[i]);
@@ -33,6 +36,7 @@ public class StringEx {
 			System.out.print(ch + " ");
 		}
 		System.out.println();
+		
 		
 		String cal = "10+20";
 		String[] num = cal.split("\\+");	// 정규표현식의 + 기호가 아닌 산술연산자 + 로 구분하려면, 앞에 \\ 를 붙여주어야한다.

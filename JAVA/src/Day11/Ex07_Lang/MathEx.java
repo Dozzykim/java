@@ -17,22 +17,22 @@ public class MathEx {
 		
 		
 		// 로또 번호 6/45
-				// [1,45] 사이의 정수형 난수 6개 만들기
-				// Math.random()					: 0.0 보다 크거나 같고 1.0 보다 작은 임의의 실수
-				// Math.random()					: 0.xxx ~ 0.9xx
-				// (0.xxx ~ 0.9xx) * 10 			: 0.xxx ~ 9.xxx  (0 ~ 9) -  10 개
-				// (0.xxx ~ 0.9xx) * 20 			: 0.xxx ~ 19.xxx (0 ~ 19) -  20 개
-				// (0.xxx ~ 0.9xx) * 45 			: 0.xxx ~ 44.xxx
-				// (0.xxx ~ 0.9xx) * 45 + 1 		: 1.xxx ~ 45.xxx
-				// (int)(Math.random() * 45 + 1) 	: 1 ~ 45
-				
-				// [공식]
-				// (int)(Math.random() * [개수] + [시작숫자] ) 
-				for (int i = 0; i < 6; i++) {
-					int random = (int)(Math.random() * 45 + 1);
-					System.out.print(random + " ");
-				}
-				System.out.println();
+		// [1,45] 사이의 정수형 난수 6개 만들기
+		// Math.random()					: 0.0 보다 크거나 같고 1.0 보다 작은 임의의 실수
+		// Math.random()					: 0.xxx ~ 0.9xx
+		// (0.xxx ~ 0.9xx) * 10 			: 0.xxx ~ 9.xxx  (0 ~ 9) -  10 개
+		// (0.xxx ~ 0.9xx) * 20 			: 0.xxx ~ 19.xxx (0 ~ 19) -  20 개
+		// (0.xxx ~ 0.9xx) * 45 			: 0.xxx ~ 44.xxx
+		// (0.xxx ~ 0.9xx) * 45 + 1 		: 1.xxx ~ 45.xxx
+		// (int)(Math.random() * 45 + 1) 	: 1 ~ 45
+		
+		// [공식]
+		// (int)(Math.random() * [개수] + [시작숫자] ) 
+		for (int i = 0; i < 6; i++) {
+			int random = (int)(Math.random() * 45 + 1);
+			System.out.print(random + " ");
+		}
+		System.out.println();
 	}
 
 }
