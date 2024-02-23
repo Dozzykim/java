@@ -173,7 +173,7 @@ public class BoardDAO extends JDBConnection {
 	public int delete(int no) {
 		int result = 0;  //결과: 적용된 데이터 건 수
 		
-		String sql = " DELETE board "
+		String sql = " DELETE FROM board "
 					+ "	WHERE no = ? ";
 		
 		try {

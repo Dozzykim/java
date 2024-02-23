@@ -1,5 +1,6 @@
 package Day16.Board;
 
+import java.awt.dnd.peer.DragSourceContextPeer;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -113,8 +114,24 @@ public class Main {
 		
 	}
 	
+	//게시글 등록
 	public static void insert() {
 		System.out.println("----- 게시글 등록 -----");
+		
+		Board board = input();
+		
+		//게시글 둥록 요청
+		int result = boardService.insert(board);
+		if (result > 0) {
+			System.out.println("게시글이 등록되었습니다.");
+		} else {
+			System.out.println("게시글 등록에 실패하였습니다.");
+		}
+	}
+	
+	
+	// 게시글 정보 입력
+	public static Board input() {
 		System.out.print("제목: ");
 		String title = input.nextLine();
 		System.out.print("작성자: ");
@@ -124,13 +141,46 @@ public class Main {
 		
 		Board board = new Board(title, writer, content);
 		
-		int result = boardService.insert(board);
+		return board;
+	}
+	
+	//게시글 수정
+	public static void update() {
+		System.out.println("----- 게시글 수정 -----");
+		
+		System.out.print("게시글 번호: ");
+		int no = input.nextInt();
+		input.nextLine();
+		
+		Board board = input();
+		board.setNo(no);
+		
+		//게시글 수정 요청
+		int result = boardService.update(board);
 		if (result > 0) {
-			System.out.println("게시글이 등록되었습니다.");
+			System.out.println("게시글이 수정되었습니다.");
 		} else {
-			System.out.println("게시글 등록에 실패하였습니다.");
+			System.out.println("게시글 수정에 실패하였습니다.");
 		}
 	}
+	
+	//게시글 삭제
+		public static void delete() {
+			System.out.println("----- 게시글 삭제 -----");
+			
+			System.out.print("게시글 번호: ");
+			int no = input.nextInt();
+			input.nextLine();
+			
+			//게시글 삭제 요청
+			int result = boardService.delete(no);
+			if (result > 0) {
+				System.out.println("게시글이 삭제되었습니다.");
+			} else {
+				System.out.println("게시글을 삭제하였습니다.");
+			}
+		}
+		
 	public static void main(String[] args) {
 		// 1. 게시글 목록
 		// 2. 게시글 조회
@@ -164,16 +214,17 @@ public class Main {
 				insert();
 				break;
 
-			case 4: // 게시글 목록
-
+			case 4: // 게시글 수정
+				update();
 				break;
 
-			case 15: // 게시글 목록
-
+			case 5: // 게시글 삭제
+				delete();
 				break;
 			}
-		} while (true);
+		} while (menuNo != 0);
 
+		System.out.println("프로그램을 종료합니다...");
 	}
 
 }
