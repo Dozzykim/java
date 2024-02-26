@@ -28,6 +28,11 @@ interface FuncInterface4 {
 	String method(String a, String b);
 }
 
+/**
+ * 람다식의 장점
+ * 1. 함수를 쉽게 축약해서 정의할 수 있다.
+ * 2. 함수를 함수에 전달/반환할 수 있다.
+ */
 
 public class LambdaFormat {
 
