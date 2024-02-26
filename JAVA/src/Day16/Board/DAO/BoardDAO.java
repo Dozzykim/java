@@ -178,7 +178,7 @@ public class BoardDAO extends JDBConnection {
 		
 		try {
 			psmt = con.prepareStatement(sql);		// 쿼리 실행 객체 생성
-			psmt.setInt(1, no);			// 1번 ?에 게시글 번호을 매핑
+			psmt.setInt(1, no);			// 첫번째 ?에 매개변수로 받아온 게시글 번호을 매핑
 			
 			result = psmt.executeUpdate();
 			// SQL 실행 요청, 적용된 데이터 갯수를 받아온다.
