@@ -72,12 +72,13 @@ public class BoardDAO extends JDBConnection {
 			psmt = con.prepareStatement(sql);
 			
 			//psmt.setXXX(순서번호, 매핑할 값);
-			psmt.setInt(1, no);  //?(1)  <--- no (글번호)
+			psmt.setInt(1, no);  //첫번째 물음표  <--- no (글번호)
 
 			// 쿼리(SQL) 실행 -> 결과 - ResultSet (rs)
 			rs = psmt.executeQuery();
 			
 			//조회 결과를 리스트(boardList)에 추가
+			//한건만 반환할거니까 if문으로 사용했음.
 			if ( rs.next() ) { // next(): 실행결과의 다음 데이터로 이동
 				
 				// 결과 데이터 가져오기
@@ -101,7 +102,7 @@ public class BoardDAO extends JDBConnection {
 	}
 
 	/*
-	 * 데이터 조회
+	 * 데이터 등록
 	 */
 	public int insert(Board board) {
 		int result = 0;
