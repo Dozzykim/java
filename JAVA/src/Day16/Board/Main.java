@@ -92,6 +92,7 @@ public class Main {
 		System.out.println("----- 게시글 조회 -----");
 		System.out.print("글 번호: ");
 		int no = input.nextInt();
+		input.nextLine();
 		Board board = boardService.select(no);
 		
 		String title = board.getTitle();
