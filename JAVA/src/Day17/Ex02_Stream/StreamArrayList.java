@@ -90,6 +90,29 @@ public class StreamArrayList {
 		// *나이순 오름차순
 		System.out.println("[나이 순 오름차순]");
 		list.stream().sorted( Comparator.comparing(Person::getAge)).forEach(p ->System.out.println(p));
+		System.out.println();
+		
+		//이름 내림차순
+		System.out.println("[이름 내림차순]");
+		list.stream().sorted( Comparator.comparing( Person::getName).reversed())
+					 .forEach(p -> System.out.println(p));
+		System.out.println();
+		
+		//나이 내림차순
+		System.out.println("[나이 내림차순]");
+		list.stream().sorted( Comparator.comparing( Person::getAge).reversed())
+		.forEach(p -> System.out.println(p));
+		System.out.println();
+		
+		//이름이 3글자인 사람들의 수
+		long count = list.stream().filter( p -> p.getName().length() >= 3 ).count();
+		//count는 long타입으로 반환하므로 변수 선언시 long타입으로 지정해줌
+		System.out.println("이름이 3글자 이상인 사람들의 수: " + count);
+		
+		//이름이 2글자인 사람들의 나이의 합계
+		long sum = list.stream().filter(p -> p.getName().length() == 2).mapToInt(p -> p.getAge()).sum();
+		//mapToInt : 매핑으로 가져온 결과를 int타입으로 가져옴
+		System.out.println("이름이 2글자인 사람들 나이의 합계: " + sum);
+		
 	}
-
 }
