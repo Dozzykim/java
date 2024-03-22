@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Separator layoutX="205.0" layoutY="196.0" prefHeight="87.0" prefWidth="200.0" />
+      <TextField layoutX="220.0" layoutY="207.0" promptText="ID" />
+      <PasswordField layoutX="220.0" layoutY="247.0" promptText="PASSWORD" />
+      <Button layoutX="325.0" layoutY="293.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="79.0" text="LOG IN">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="205.0" layoutY="293.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="79.0" text="SIGN IN">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Hyperlink layoutX="205.0" layoutY="338.0" text="Did you forget the ID or Password?" textAlignment="CENTER" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="225.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Default_pfp.svg.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

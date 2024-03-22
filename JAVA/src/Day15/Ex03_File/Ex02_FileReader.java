@@ -3,13 +3,26 @@ package Day15.Ex03_File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Ex02_FileReader {
+
+	/**
+	 * student
+	
+	 */
+	public class Student {
+		public int no ;
+		public String name;
+		public int score;
+		public String major;
+	}
 	
 	public static void main(String[] args) {
 		// FileReader - 문자 스트림 클래스
 		// new FileReader("파일경로");
 		FileReader fr = null;
+		ArrayList<Student> students = new ArrayList<>();
 		
 		try {
 			
